@@ -1,0 +1,54 @@
+@mixin pos_circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .circle-outer {
+        @include pos_circle;
+        border: 2px solid #000;
+        border-radius: 50%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .circle-inner {
+        @include pos_circle;
+        width: 450px;
+        height: 450px;
+        border: 2px solid #000;
+        border-radius: 50%;
+    }
+
+    .circle-knob {
+        width: 15px;
+        height: 15px;
+        background-color: #000;
+        border-radius: 50%;
+    }
+}
