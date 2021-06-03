@@ -21,39 +21,108 @@ body {
 }
 
 .clock-container {
-    position: relative;
     width: 550px;
     height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .circle-outer {
-        @include pos_circle;
-        border: 2px solid #000;
-        border-radius: 50%;
-        width: 500px;
-        height: 500px;
-        box-shadow: 0px 0px 10px #000;
-        background-color: white;
-    }
+    .clock {
+        width: 100%;
+        height: 100%;
 
-    .circle-inner {
-        @include pos_circle;
-        width: 450px;
-        height: 450px;
-        border: 2px solid #000;
-        border-radius: 50%;
-        box-shadow: 0px 0px 25px #000 inset;
-        background: linear-gradient(to bottom, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%);
-    }
+        .circle-outer {
+            @include pos_circle;
+            border: 2px solid #000;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            box-shadow: 0px 0px 10px #000;
+            background-color: white;
+        }
+    
+        .circle-inner {
+            position: relative;
+            @include pos_circle;
+            width: 450px;
+            height: 450px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            box-shadow: 0px 0px 25px #000 inset;
+            background: linear-gradient(to bottom, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%);
 
-    .circle-knob {
-        width: 25px;
-        height: 25px;
-        background-color: rgb(121, 121, 121);
-        border-radius: 50%;
-        z-index: 1;
-        box-shadow: 0px 0px 0px 2px #000;
+            .numbers {
+                @include pos_circle;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                font-size: 48px;
+                padding: 5px;
+
+                .number-on-clock {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            .numbers-12-6 {
+                transform: translate(-50%, -50%) rotateZ(90deg);
+                transform-origin: center;
+
+                > span {
+                    transform: rotateZ(-90deg);
+                }
+            }
+
+            .numbers-1-7 {
+                transform: translate(-50%, -50%) rotateZ(120deg);
+                transform-origin: center;
+
+                > span {
+                    transform: rotateZ(-120deg);
+                }
+            }
+
+            .numbers-2-8 {
+                transform: translate(-50%, -50%) rotateZ(150deg);
+                transform-origin: center;
+
+                > span {
+                    transform: rotateZ(-150deg);
+                }
+            }
+
+            .numbers-4-10 {
+                transform: translate(-50%, -50%) rotateZ(210deg);
+                transform-origin: center;
+
+                > span {
+                    transform: rotateZ(-210deg);
+                }
+            }
+            .numbers-5-11 {
+                transform: translate(-50%, -50%) rotateZ(240deg);
+                transform-origin: center;
+
+                > span {
+                    transform: rotateZ(-240deg);
+                }
+            }
+        }
+
+        .circle-knob {
+            @include pos_circle;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(121, 121, 121);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0px 0px 0px 2px #000;
+        }
+       
     }
+    
 }
